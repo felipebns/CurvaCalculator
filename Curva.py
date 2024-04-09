@@ -108,12 +108,12 @@ class Curva():
         for eixo,tg_list in self.__horTg.items():
             if eixo == 'Y':
                 for tg in tg_list:
-                    matplotlib.pyplot.axhline(y=tg, color='orange', alpha=1, linestyle='-.')
+                    matplotlib.pyplot.axhline(y=tg, xmin=-1, xmax=1, color='orange', alpha=1, linestyle='-.')
 
         for eixo,tg_list in self.__vertTg.items():
             if eixo == 'X':
                 for tg in tg_list:
-                    matplotlib.pyplot.axvline(x=tg, color='green', alpha=1, linestyle='-.')
+                    matplotlib.pyplot.axvline(x=tg, ymin=-1, ymax=1, color='green', alpha=1, linestyle='-.')
 
     def plotCurva(self) -> None: 
         fig = matplotlib.pyplot.figure(facecolor='azure', figsize=(7,5))
@@ -124,7 +124,7 @@ class Curva():
 
         matplotlib.pyplot.scatter(self.__pxs, self.__pys, color='r', alpha=1, label='AutoIntersec')
         matplotlib.pyplot.scatter(self.__horTg['X'], self.__horTg['Y'], color='cyan', label='Tg Horizontal')
-        matplotlib.pyplot.scatter(self.__vertTg['X'], self.__vertTg['Y'], color='pink', label='Tg Vertical')
+        matplotlib.pyplot.scatter(self.__vertTg['X'], self.__vertTg['Y'], color='magenta', label='Tg Vertical')
 
         self.plotTgs()
 
