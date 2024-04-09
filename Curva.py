@@ -1,6 +1,5 @@
 import matplotlib as plt
 import math
-from tqdm import tqdm
 from scipy.misc import derivative
 
 #Fazer genérico para qualquer curva!!!
@@ -51,7 +50,7 @@ class Curva():
         return (derivative(funcY, t, dx=1e-6))
         
     def verificaTg(self) -> None:
-        for i in tqdm(range(len(self.list_t)-1)):
+        for i in (range(len(self.list_t)-1)):
             x1 = self.__lista_xl[i]
             x2 = self.__lista_xl[i+1]
             y1 = self.__lista_yl[i]
@@ -82,7 +81,7 @@ class Curva():
 
     def determinaIntersec(self) -> None:    
         dict_aux = {}
-        for i in tqdm(range(len(self.__lista_x)-1)):
+        for i in (range(len(self.__lista_x)-1)):
             for j in range(i-1):
                 #cria xs_ys e verifica se é diferente de 0
                 if xs_ys := self.verificaIntersec(self.__lista_x[i],self.__lista_x[i+1],self.__lista_x[j],self.__lista_x[j+1],self.__lista_y[i],self.__lista_y[i+1],self.__lista_y[j],self.__lista_y[j+1]):
@@ -92,7 +91,7 @@ class Curva():
                     self.__intersec[f't: {self.list_t[i]}'] = dict_aux
         
     def fazPontos(self) -> None:
-        for t in tqdm(self.list_t):
+        for t in (self.list_t):
             self.__lista_x.append(self.funcX(t=t))
             self.__lista_y.append(self.funcY(t=t))
 
