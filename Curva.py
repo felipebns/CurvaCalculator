@@ -1,5 +1,6 @@
-import matplotlib as plt
+import matplotlib 
 import math
+import matplotlib.pyplot
 import scipy
 
 #Fazer genérico para qualquer curva!!!
@@ -108,42 +109,42 @@ class Curva():
         for eixo,tg_list in self.__horTg.items():
             if eixo == 'Y':
                 for tg in tg_list:
-                    plt.axhline(y=tg, color='orange', alpha=1, linestyle='-.')
+                    matplotlib.axhline(y=tg, color='orange', alpha=1, linestyle='-.')
 
         for eixo,tg_list in self.__vertTg.items():
             if eixo == 'X':
                 for tg in tg_list:
-                    plt.axvline(x=tg, color='green', alpha=1, linestyle='-.')
+                    matplotlib.axvline(x=tg, color='green', alpha=1, linestyle='-.')
 
     def plotCurva(self) -> None: 
-        fig = plt.figure(facecolor='azure', figsize=(7,5))
+        fig = matplotlib.pyplot.figure(facecolor='azure', figsize=(7,5))
 
-        plt.plot(self.__lista_x, self.__lista_y)
+        matplotlib.plot(self.__lista_x, self.__lista_y)
         #plotar derivada
-        # plt.plot(self.__lista_xl, self.__lista_yl, color='green')
+        # matplotlib.plot(self.__lista_xl, self.__lista_yl, color='green')
 
-        plt.scatter(self.__pxs, self.__pys, color='r', alpha=1, label='AutoIntersec')
-        plt.scatter(self.__horTg['X'], self.__horTg['Y'], color='orange', label='Tg Horizontal')
-        plt.scatter(self.__vertTg['X'], self.__vertTg['Y'], color='green', label='Tg Vertical')
+        matplotlib.scatter(self.__pxs, self.__pys, color='r', alpha=1, label='AutoIntersec')
+        matplotlib.scatter(self.__horTg['X'], self.__horTg['Y'], color='orange', label='Tg Horizontal')
+        matplotlib.scatter(self.__vertTg['X'], self.__vertTg['Y'], color='green', label='Tg Vertical')
 
         self.plotTgs()
 
-        plt.title('Curva')
-        plt.ylabel('Y')
-        plt.xlabel('X')
+        matplotlib.title('Curva')
+        matplotlib.ylabel('Y')
+        matplotlib.xlabel('X')
 
-        plt.xlim(min(self.__lista_x)-1, max(self.__lista_x)+1)
-        plt.ylim(min(self.__lista_y)-1, max(self.__lista_y)+1)
+        matplotlib.xlim(min(self.__lista_x)-1, max(self.__lista_x)+1)
+        matplotlib.ylim(min(self.__lista_y)-1, max(self.__lista_y)+1)
 
-        plt.grid(color='white')
-        plt.axvspan(min(self.__lista_x)-1, max(self.__lista_x)+1, color='powderblue', alpha=0.6)
-        plt.legend()
-        plt.show()
+        matplotlib.grid(color='white')
+        matplotlib.axvspan(min(self.__lista_x)-1, max(self.__lista_x)+1, color='powderblue', alpha=0.6)
+        matplotlib.legend()
+        matplotlib.show()
 
-        plt.savefig('static/curva_plot.png')  # Save the plot as a PNG file in the static directory
+        matplotlib.savefig('static/curva_plot.png')  # Save the plot as a PNG file in the static directory
 
         # Clear the plot to release resources
-        plt.close()
+        matplotlib.close()
 
     def run(self) -> None:
         self.fazPontos()
