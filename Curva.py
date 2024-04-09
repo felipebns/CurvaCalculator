@@ -74,25 +74,23 @@ class Curva():
         m1 = (y2-y1)/(x2-x1)
         m2 = (y4-y3)/(x4-x3)
 
-        if abs(m1 - m2) != 0:
-            px = (m1*x1 - m2*x3 + y3-y1)/(m1-m2)
-            py = m1*(px-x1) + y1
+        px = (m1*x1 - m2*x3 + y3-y1)/(m1-m2)
+        py = m1*(px-x1) + y1
 
-            if ((px >= min(x1,x2) and px <= max(x1,x2)) and
-                (px >= min(x3,x4) and px <= max(x3,x4))):
-                return px, py
-        else:
-            return 0,0
-        
+        if ((px >= min(x1,x2) and px <= max(x1,x2)) and
+            (px >= min(x3,x4) and px <= max(x3,x4))):
+            return px, py
 
     def determinaIntersec(self) -> None:    
+        dict_aux = {}
         for i in tqdm(range(len(self.__lista_x)-1)):
             for j in range(i-1):
                 #cria xs_ys e verifica se é diferente de 0
                 if xs_ys := self.verificaIntersec(self.__lista_x[i],self.__lista_x[i+1],self.__lista_x[j],self.__lista_x[j+1],self.__lista_y[i],self.__lista_y[i+1],self.__lista_y[j],self.__lista_y[j+1]):
                     self.__pxs.append(xs_ys[0])
                     self.__pys.append(xs_ys[1])
-                    self.__intersec[f'X: {xs_ys[0]}'] = f'Y: {xs_ys[1]}'
+                    dict_aux[f'X: {xs_ys[0]}'] = f'Y: {xs_ys[1]}'
+                    self.__intersec[f't: {self.list_t[i]}'] = dict_aux
         
     def fazPontos(self) -> None:
         for t in tqdm(self.list_t):
