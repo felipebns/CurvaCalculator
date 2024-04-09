@@ -2,7 +2,6 @@ import matplotlib as plt
 import math
 from tqdm import tqdm
 from scipy.misc import derivative
-import sympy as smp
 
 #Fazer genérico para qualquer curva!!!
 
