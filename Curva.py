@@ -55,6 +55,7 @@ class Curva():
             x2 = self.__lista_xl[i+1]
             y1 = self.__lista_yl[i]
             y2 = self.__lista_yl[i+1]
+            primeiro = False
             if i == 0:
                 primeiro = True
             self.metodoBissecX(i, y1, y2, primeiro)
