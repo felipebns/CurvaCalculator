@@ -2,4 +2,4 @@ numpy
 pandas
 matplotlib
 streamlit
-scypy.misc
+scypy
