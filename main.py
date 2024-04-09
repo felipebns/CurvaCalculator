@@ -67,8 +67,8 @@ def funcY(t: float) -> float:
     return eval(y)
 
 def delete_image():
-    if os.path.exists('static/curva_plot.png'):
-        os.remove('static/curva_plot.png')
+    if os.path.exists('static\curva_plot.png'):
+        os.remove('static\curva_plot.png')
 
 atexit.register(delete_image)
 
@@ -76,4 +76,4 @@ if __name__ == '__main__':
     if x != None and y != None and start != 1 and end != 1 and interval != 1:
         curva = Curva(list_t=np.arange(start, end, interval), funcX=funcX, funcY=funcY)
         main(curva=curva)
-        st.image('static/curva_plot.png', caption='Curva')
+        st.image('static\curva_plot.png', caption='Curva')

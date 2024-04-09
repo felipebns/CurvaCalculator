@@ -140,7 +140,7 @@ class Curva():
         matplotlib.pyplot.legend()
         matplotlib.pyplot.show()
 
-        matplotlib.pyplot.savefig('static/curva_plot.png')  # Save the plot as a PNG file in the static directory
+        matplotlib.pyplot.savefig('static\curva_plot.png')  # Save the plot as a PNG file in the static directory
 
         # Clear the plot to release resources
         matplotlib.pyplot.close()
