@@ -55,16 +55,28 @@ class Curva():
             x2 = self.__lista_xl[i+1]
             y1 = self.__lista_yl[i]
             y2 = self.__lista_yl[i+1]
-            self.metodoBissecX(i, y1, y2)
-            self.metodoBissecY(i, x1, x2)
+            if i == 0:
+                primeiro = True
+            self.metodoBissecX(i, y1, y2, primeiro)
+            self.metodoBissecY(i, x1, x2, primeiro)
 
-    def metodoBissecX(self, i, y1, y2) -> None:
-        if y1*y2 < 0:
+    def metodoBissecX(self, i, y1, y2, primeiro) -> None:
+        if primeiro:
+                y3 = self.__lista_yl[i-1]
+                if y1*y3 < 0 or y1*y2 < 0:
+                    self.__horTg['X'].append(self.__x_t[self.list_t[i]]) 
+                    self.__horTg['Y'].append(self.__y_t[self.list_t[i]])
+        elif y1*y2 < 0:
             self.__horTg['X'].append(self.__x_t[self.list_t[i]]) 
             self.__horTg['Y'].append(self.__y_t[self.list_t[i]])
 
-    def metodoBissecY(self, i, x1, x2) -> None:
-        if x1*x2 < 0:
+    def metodoBissecY(self, i, x1, x2, primeiro) -> None:
+        if primeiro:
+                x3 = self.__lista_yl[i-1]
+                if x1*x3 < 0 or x1*x2 < 0:
+                    self.__vertTg['X'].append(self.__x_t[self.list_t[i]])
+                    self.__vertTg['Y'].append(self.__y_t[self.list_t[i]])
+        elif x1*x2 < 0:
             self.__vertTg['X'].append(self.__x_t[self.list_t[i]])
             self.__vertTg['Y'].append(self.__y_t[self.list_t[i]])
 
