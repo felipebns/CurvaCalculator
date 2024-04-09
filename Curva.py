@@ -136,7 +136,7 @@ class Curva():
         matplotlib.pyplot.ylim(min(self.__lista_y)-1, max(self.__lista_y)+1)
 
         matplotlib.pyplot.grid(color='black')
-        matplotlib.pyplot.axvspan(min(self.__lista_x)-1, max(self.__lista_x)+1, color='white')
+        matplotlib.pyplot.axvspan(min(self.__lista_x)-1, max(self.__lista_x)+1, color='white', alpha=0)
         matplotlib.pyplot.legend()
         matplotlib.pyplot.show()
 
