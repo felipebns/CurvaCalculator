@@ -1,6 +1,6 @@
 import matplotlib as plt
 import math
-from scipy.misc import derivative
+import scipy
 
 #Fazer genérico para qualquer curva!!!
 
@@ -44,10 +44,10 @@ class Curva():
             print(f'X: {self.__vertTg["X"][i]} Y: {self.__vertTg["Y"][i]}')   
 
     def derivaX(self, funcX, t: float) -> float:     
-        return (derivative(funcX, t, dx=1e-6))
+        return (scipy.misc.derivative(funcX, t, dx=1e-6))
 
     def derivaY(self, funcY, t: float) -> float:     
-        return (derivative(funcY, t, dx=1e-6))
+        return (scipy.misc.derivative(funcY, t, dx=1e-6))
         
     def verificaTg(self) -> None:
         for i in (range(len(self.list_t)-1)):
