@@ -1,6 +1,5 @@
-import matplotlib.pyplot 
+import matplotlib
 import math
-import matplotlib.pyplot.pyplot
 import scipy
 
 #Fazer genérico para qualquer curva!!!
