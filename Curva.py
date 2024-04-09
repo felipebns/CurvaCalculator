@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+import matplotlib as plt
 import math
 from tqdm import tqdm
 from scipy.misc import derivative
