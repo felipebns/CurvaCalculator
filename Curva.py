@@ -116,7 +116,7 @@ class Curva():
                     matplotlib.pyplot.axvline(x=tg, color='green', alpha=1, linestyle='-.')
 
     def plotCurva(self) -> None: 
-        fig = matplotlib.pyplot.figure(facecolor='white', figsize=(7,5))
+        fig = matplotlib.pyplot.figure(facecolor='azure', figsize=(7,5))
 
         matplotlib.pyplot.plot(self.__lista_x, self.__lista_y)
         #plotar derivada
@@ -136,7 +136,7 @@ class Curva():
         matplotlib.pyplot.ylim(min(self.__lista_y)-1, max(self.__lista_y)+1)
 
         matplotlib.pyplot.grid(color='black')
-        matplotlib.pyplot.axvspan(min(self.__lista_x)-1, max(self.__lista_x)+1, color='powderblue', alpha=0.6)
+        matplotlib.pyplot.axvspan(min(self.__lista_x)-1, max(self.__lista_x)+1, color='white', alpha=0.6)
         matplotlib.pyplot.legend()
         matplotlib.pyplot.show()
 
