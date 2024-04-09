@@ -116,7 +116,7 @@ class Curva():
                     plt.axvline(x=tg, color='green', alpha=1, linestyle='-.')
 
     def plotCurva(self) -> None: 
-        fig = plt.pyplot.figure(facecolor='azure', figsize=(7,5))
+        fig = plt.figure(facecolor='azure', figsize=(7,5))
 
         plt.plot(self.__lista_x, self.__lista_y)
         #plotar derivada
