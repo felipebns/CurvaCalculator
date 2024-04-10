@@ -121,12 +121,12 @@ class Curva():
         for eixo,tg_list in self.__horTg.items():
             if eixo == 'Y':
                 for tg in tg_list:
-                    matplotlib.pyplot.axhline(y=tg, color='orange', alpha=1, linestyle='-.')
+                    matplotlib.pyplot.axhline(y=tg, xmin=0.4, xmax=0.6, color='orange', alpha=1, linestyle='-.')
 
         for eixo,tg_list in self.__vertTg.items():
             if eixo == 'X':
                 for tg in tg_list:
-                    matplotlib.pyplot.axvline(x=tg, color='green', alpha=1, linestyle='-.')
+                    matplotlib.pyplot.axvline(x=tg, ymin=0.4, ymax=0.6, color='green', alpha=1, linestyle='-.')
 
     def plotCurva(self) -> None: 
         fig = matplotlib.pyplot.figure(facecolor='azure', figsize=(7,5))
