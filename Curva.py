@@ -166,5 +166,6 @@ class Curva():
         self.printaHorTg()
         self.printaVertTg()
         self.plotCurva()
+        print('bom dia')
         
     
